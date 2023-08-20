@@ -1,14 +1,29 @@
-import { Nav, NavContainer, NavDescription } from "./styles";
+import {
+  Nav,
+  Bars,
+  NavMenu,
+  NavLink,
+  NavButton,
+  NavButtonLink
+} from './styles';
 import Logo from "../../assets/Logo.jpg";
 const Navbar = () => {
   return (
     <Nav>
-      <NavContainer>
-        <a>
-          <img src={Logo} alt="Logo" height={60} width={60}/>
-        </a>
-        <NavDescription></NavDescription>
-      </NavContainer>
+      <Bars />
+      <NavMenu>
+        <NavLink to="/about">About</NavLink>
+        <NavLink to="/services">Services</NavLink>
+      </NavMenu>
+      <NavLink to="/" >
+        <img src={Logo} alt="Logo" height={60} width={60} />
+      </NavLink>
+      <NavMenu>
+        <NavLink to="/signup">Sign Up</NavLink>
+        <NavButton>
+          <NavLink to ="/signin">Sign In</NavLink>
+        </NavButton>
+      </NavMenu>
     </Nav>
   );
 };
